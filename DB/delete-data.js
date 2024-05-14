@@ -7,7 +7,7 @@ async function execute() {
     try {
 
         const {rows} = await sql`
-        DELETE FROM note WHERE id = 2; `
+        DELETE FROM note; `
         console.log(rows)
     } catch (error) {
         console.log(error)
