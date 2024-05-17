@@ -7,7 +7,6 @@ async function getData(req,res) {
             return res.status(405).json({message:"Method tidak diperbolehkan"})
         }
 
-        const {id} = await req.query
         const {rows} = await sql`SELECT * FROM note`
 
         res.status(200).json({message:"Success", data:rows})

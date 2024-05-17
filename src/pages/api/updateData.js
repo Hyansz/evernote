@@ -7,8 +7,7 @@ async function updateData(req,res) {
             return res.status(405).json({message:"Method tidak diperbolehkan"})
         }
 
-        const {title, contain} = req.body
-        const {id} = await req.query
+        const {id, title, contain} = req.body
 
         const rows = await sql`UPDATE note SET contain = ${contain}, title = ${title} WHERE id = ${id}`
 
